@@ -8,7 +8,6 @@ class StarWarsCharacter {
     height,
     homeworld,
     mass,
-    skinColor,
     starships,
     vehicles
   ) {
@@ -20,7 +19,6 @@ class StarWarsCharacter {
     this.height = height
     this.homeworld = homeworld
     this.mass = mass
-    this.skinColor = skinColor
     this.starships = starships
     this.vehicles = vehicles
   }
@@ -47,14 +45,13 @@ fetch('https://swapi.dev/api/people/1/')
           json.height,
           json.homeworld,
           json.mass,
-          json.skin_color,
           json.starships,
           json.vehicles
         )
 
         // const card = createCharacterCard(starWardsCharacterObject)
 
-        char1Name.textContent = starWarsCharacterObject.charName
+        // char1Name.textContent = starWarsCharacterObject.charName
         // const dateOfBirth = document.createElement('p')
         // dateOfBirth.textContent = starWarsCharacterObject.DOB
         //?.appendChild(card)
