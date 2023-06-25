@@ -23,7 +23,7 @@ class StarWarsCharacter {
     this.vehicles = vehicles
   }
 }
-const char1Name = document.querySelector('char1-name')
+
 // const createCharacterCard = () => {
 
 // //create character card html.
@@ -73,7 +73,24 @@ const getStarWarsCharData = async () => {
 // console.log(run2)
 
 getStarWarsCharData()
-  .then((data) => console.log('resolved: ', data))
+  .then((data) => {
+    console.log(data)
+    const character = new StarWarsCharacter(
+      data.name,
+      data.birth_year,
+      data.eye_color,
+      data.gender,
+      data.hair_color,
+      data.height,
+      data.homeworld,
+      data.mass,
+      data.starships,
+      data.vehicles
+    )
+    console.log(character.gender)
+    const char1Name = document.querySelector('.char1-name')
+    char1Name.textContent = `${character.charName}`
+  })
   .catch((err) => console.log('unresolved: ', err.message))
 
 // *********************************
