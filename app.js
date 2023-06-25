@@ -29,8 +29,71 @@ const char1Name = document.querySelector('char1-name')
 // //create character card html.
 
 // }
+// *********************************
+// *********************************
+// *********************************
+/*
+const getStarWarsData = async () => {
+  const response = await fetch('https://swapi.dev/api/people/')
+  const data = await response.json()
+  // console.log(data)
+  results = data.results
+  console.log(results)
+  for (const char of results) {
+    console.log(`${char.name} has ${char.eyeColor} eyes`)
+    console.log(char.eye_color)
+  }
 
-fetch('https://swapi.dev/api/people/1/')
+  return results
+}
+
+const run = getStarWarsData()
+console.log(run)
+*/
+// *********************************
+// *********************************
+// *********************************
+
+const getStarWarsCharData = async () => {
+  const response = await fetch(
+    `https://swapi.dev/api/people/${Math.floor(Math.random() * (83 - 1) + 1)}/`
+  )
+  const data = await response.json()
+
+  if (response.status !== 200) {
+    throw new Error(
+      `Sorry, something went wrong and we cannot fetch the data your requested`
+    )
+  }
+
+  return data
+}
+
+// const run2 = getStarWarsCharData()
+// console.log(run2)
+
+getStarWarsCharData()
+  .then((data) => console.log('resolved: ', data))
+  .catch((err) => console.log('unresolved: ', err.message))
+
+// *********************************
+// *********************************
+// *********************************
+
+// getStarWardData()
+//   .then(
+//     (results = () => {
+//       'resolved:', results
+//     })
+//   )
+//   .catch(
+//     (err = () => {
+//       console.error('Rejected:', err)
+//     })
+//   )
+
+/*
+fetch('https://swapi.dev/api/people/')
   .then((response) => {
     response
       .json()
@@ -59,10 +122,12 @@ fetch('https://swapi.dev/api/people/1/')
       .catch((error) => console.log(error))
   })
   .catch((error) => console.error(error))
+*/
 
-// char1-title.textContent = //fill in from API
+// *********************************
+// *********************************
+// *********************************
 /*  
-
 json.results.forEach((pokemon) => { 
 fetch(pokemon.url).then((response) => { 
 response 
