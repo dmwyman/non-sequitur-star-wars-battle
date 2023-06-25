@@ -24,32 +24,6 @@ class StarWarsCharacter {
   }
 }
 
-// const createCharacterCard = () => {
-
-// //create character card html.
-
-// }
-// *********************************
-// *********************************
-// *********************************
-/*
-const getStarWarsData = async () => {
-  const response = await fetch('https://swapi.dev/api/people/')
-  const data = await response.json()
-  // console.log(data)
-  results = data.results
-  console.log(results)
-  for (const char of results) {
-    console.log(`${char.name} has ${char.eyeColor} eyes`)
-    console.log(char.eye_color)
-  }
-
-  return results
-}
-
-const run = getStarWarsData()
-console.log(run)
-*/
 // *********************************
 // *********************************
 // *********************************
@@ -68,9 +42,6 @@ const getStarWarsCharData = async () => {
 
   return data
 }
-
-// const run2 = getStarWarsCharData()
-// console.log(run2)
 
 getStarWarsCharData()
   .then((data) => {
@@ -96,68 +67,3 @@ getStarWarsCharData()
 // *********************************
 // *********************************
 // *********************************
-
-// getStarWardData()
-//   .then(
-//     (results = () => {
-//       'resolved:', results
-//     })
-//   )
-//   .catch(
-//     (err = () => {
-//       console.error('Rejected:', err)
-//     })
-//   )
-
-/*
-fetch('https://swapi.dev/api/people/')
-  .then((response) => {
-    response
-      .json()
-      .then((json) => {
-        console.log(json)
-        const starWarsCharacterObject = new StarWarsCharacter(
-          json.name,
-          json.birth_year,
-          json.eye_color,
-          json.gender,
-          json.hair_color,
-          json.height,
-          json.homeworld,
-          json.mass,
-          json.starships,
-          json.vehicles
-        )
-
-        // const card = createCharacterCard(starWardsCharacterObject)
-
-        // char1Name.textContent = starWarsCharacterObject.charName
-        // const dateOfBirth = document.createElement('p')
-        // dateOfBirth.textContent = starWarsCharacterObject.DOB
-        //?.appendChild(card)
-      })
-      .catch((error) => console.log(error))
-  })
-  .catch((error) => console.error(error))
-*/
-
-// *********************************
-// *********************************
-// *********************************
-/*  
-json.results.forEach((pokemon) => { 
-fetch(pokemon.url).then((response) => { 
-response 
-.json() 
-.then((pokemonJson) => { 
-console.log(pokemonJson) 
-const pokemonObject = new PokemonClass( 
-pokemonJson.name, 
-pokemonJson.id, 
-pokemonJson.sprites.front_default 
-) 
-const card = createPokemonCard(pokemonObject) 
-app.appendChild(card) 
-}) 
-.catch((error) => console.error(error)) 
-*/
