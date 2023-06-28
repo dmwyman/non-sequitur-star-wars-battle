@@ -1,7 +1,7 @@
 // TODO: create character generator button/s (one for each char or only one)
 // TODO: create battle button
 
-// **TODO**: figure out how to GET/display homeworld, starships, and vehicles
+// **TODO**: figure out how to GET/display multiple starships, and vehicles
 // TODO: array of functions to determine random winner
 
 class StarWarsCharacter {
@@ -13,7 +13,9 @@ class StarWarsCharacter {
     hairColor,
     height,
     mass,
-    homeworld
+    homeworld,
+    starships,
+    vehicles
   ) {
     this.charName = charName
     this.DOB = DOB
@@ -23,15 +25,8 @@ class StarWarsCharacter {
     this.height = height
     this.mass = mass
     this.homeworld = homeworld
-    // this.starships = starships
-    // this.vehicles = vehicles
-  }
-}
-
-// Planet Class
-class Planet {
-  constructor(planetName) {
-    this.planetName = planetName
+    this.starships = starships
+    this.vehicles = vehicles
   }
 }
 
@@ -58,6 +53,7 @@ const getStarWarsCharData = async () => {
 // *********************************
 // *********************************
 
+//Planet - Homeworld data
 const getMoreCharData = async (url) => {
   const response = await fetch(`${url}`)
   const data = await response.json()
@@ -69,6 +65,18 @@ const getMoreCharData = async (url) => {
   }
   return data
 }
+
+// const getStarshipData = async (...url) => {
+//   const response = await fetch(`${[...url]}`)
+//   const data = await response.json()
+//   console.log(data)
+//   if (response.status !== 200) {
+//     throw new Error(
+//       `Sorry, something went wrong and we cannot fetch the data your requested`
+//     )
+//   }
+//   return data
+// }
 
 /* Invoke async getStarWarsCharData function */
 getStarWarsCharData()
@@ -82,10 +90,14 @@ getStarWarsCharData()
       data.hair_color,
       data.height,
       data.mass,
-      data.homeworld
+      data.homeworld,
+      data.starships,
+      data.vehicles
     )
     // manipulate DOM
     console.log(character.homeworld)
+    console.log(character.starships)
+    // console.log(character.starships[(0, 1, 2)])
     const charName = document.querySelector('.char-name')
     const charBirthYear = document.querySelector('.char-birth-year')
     const charEyeColor = document.querySelector('.char-eye-color')
@@ -95,8 +107,8 @@ getStarWarsCharData()
     const charMass = document.querySelector('.char-mass')
     const charHomeworld = document.querySelector('.char-homeworld')
 
-    // const charStarShips = document.querySelector('.char-starships')
-    // const charVehicles = document.querySelector('.char-vehicles')
+    const charStarships = document.querySelector('.char-starships')
+    const charVehicles = document.querySelector('.char-vehicles')
     charName.textContent = `${character.charName}`
     charBirthYear.textContent = `Year of Birth: ${character.DOB}`
     charEyeColor.textContent = `Eye Color: ${character.eyeColor}`
@@ -107,18 +119,40 @@ getStarWarsCharData()
     // TODOS BELOW
     const planet = getMoreCharData(character.homeworld)
       .then((data) => {
-        const planetName = new Planet(data.name)
-        console.log(planetName)
-        return planetName
+        charHomeworld.textContent = `Homeworld: ${data.name}`
       })
       .catch((err) => {
         console.log(`unresolved: ${err.message}`)
       })
 
-    charHomeworld.textContent = `Homeworld: ${planet}`
+    if (character.starships.length === 1) {
+      const starships = getMoreCharData(character.starships)
+        .then((data) => {
+          charStarships.textContent = `Starships: ${data.name}`
+        })
+        .catch((err) => {
+          console.log(`unresolved: ${err.message}`)
+        })
+    } else if (character.starships.length > 1) {
+      const starships = getMoreCharData(character.starships)
+        .then((data) => {
+          // charStarships.textContent = `Starships: ${(data.forEach())}`
+          charStarships.textContent = `Starships: more than one`
+        })
+        .catch((err) => {
+          console.log(`unresolved: ${err.message}`)
+        })
+    } else {
+      charStarships.textContent = `Starships: None or Unknown`
+    }
 
-    // charStarShips.textContent = `${character.starships}`
-    // charVehicles.textContent = `${character.vehicles}`
+    //   const vehicles = getMoreCharData(character.vehicles)
+    //     .then((data) => {
+    //       charStarships.textContent = `Vehicles: ${data.name}`
+    //     })
+    //     .catch((err) => {
+    //       console.log(`unresolved: ${err.message}`)
+    //     })
   })
   .catch((err) => console.log(`unresolved: ${err.message}`))
 
