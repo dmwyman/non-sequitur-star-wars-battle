@@ -34,6 +34,8 @@ class StarWarsCharacter {
 // ************** GET Character Data ******************
 // ****************************************************
 
+//NOTE: people/17/ returns a 404 error
+
 const getStarWarsCharData = async () => {
   const response = await fetch(
     `https://swapi.dev/api/people/${Math.floor(Math.random() * (83 - 1) + 1)}/`
@@ -42,7 +44,7 @@ const getStarWarsCharData = async () => {
 
   if (response.status !== 200) {
     throw new Error(
-      `Sorry, something went wrong and we cannot fetch the data your requested`
+      `Sorry, something went wrong and we cannot fetch the data your requested. Please try again.`
     )
   }
 
@@ -53,7 +55,7 @@ const getStarWarsCharData = async () => {
 // *********************************
 // *********************************
 
-//Planet - Homeworld data
+// Additional data request (homeworld, starships, vehicles)
 const getMoreCharData = async (url) => {
   const response = await fetch(`${url}`)
   const data = await response.json()
@@ -66,19 +68,7 @@ const getMoreCharData = async (url) => {
   return data
 }
 
-// const getStarshipData = async (...url) => {
-//   const response = await fetch(`${[...url]}`)
-//   const data = await response.json()
-//   console.log(data)
-//   if (response.status !== 200) {
-//     throw new Error(
-//       `Sorry, something went wrong and we cannot fetch the data your requested`
-//     )
-//   }
-//   return data
-// }
-
-/* Invoke async getStarWarsCharData function */
+/* Get and display data */
 getStarWarsCharData()
   .then((data) => {
     console.log(data)
@@ -116,7 +106,8 @@ getStarWarsCharData()
     charHairColor.textContent = `Hair Color: ${character.hairColor}`
     charHeight.textContent = `Height: ${character.height}`
     charMass.textContent = `Mass: ${character.mass}`
-    // TODOS BELOW
+
+    //Homeworld
     const planet = getMoreCharData(character.homeworld)
       .then((data) => {
         charHomeworld.textContent = `Homeworld: ${data.name}`
@@ -125,6 +116,7 @@ getStarWarsCharData()
         console.log(`unresolved: ${err.message}`)
       })
 
+    //Starships
     if (character.starships.length === 1) {
       const starships = getMoreCharData(character.starships)
         .then((data) => {
@@ -134,17 +126,28 @@ getStarWarsCharData()
           console.log(`unresolved: ${err.message}`)
         })
     } else if (character.starships.length > 1) {
-      const starships = getMoreCharData(character.starships)
-        .then((data) => {
-          // charStarships.textContent = `Starships: ${(data.forEach())}`
-          charStarships.textContent = `Starships: more than one`
-        })
-        .catch((err) => {
-          console.log(`unresolved: ${err.message}`)
-        })
+      starshipsArray = character.starships
+      const starshipsDisplayArray = []
+      for (ship of starshipsArray) {
+        getMoreCharData(ship)
+          .then((data) => {
+            // console.log(data)
+            console.log(data.name)
+            // const starshipsDisplayArray = []
+            starshipsDisplayArray.push(data.name)
+            charStarships.textContent = `Starships: ${starshipsDisplayArray.join(
+              ', '
+            )}`
+          })
+          .catch((err) => {
+            console.log(`unresolved: ${err.message}`)
+          })
+      }
     } else {
       charStarships.textContent = `Starships: None or Unknown`
     }
+
+    // Vehicles
 
     //   const vehicles = getMoreCharData(character.vehicles)
     //     .then((data) => {
