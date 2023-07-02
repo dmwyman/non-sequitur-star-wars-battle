@@ -1,6 +1,17 @@
-// TODO: create battle button
-// TODO: array of functions to determine random winner
+// TODO: Countdown to Ahsoka Aug 23 2023
+// TODO: CSS
 //NOTE: people/17/ returns a 404 error
+
+// Current Date
+const currentDateMsg = document.querySelector('.current-date-msg')
+const displayDate = () => {
+  const now = new Date()
+  // console.log(now.toLocaleString())
+  currentDateMsg.textContent = now.toDateString()
+}
+displayDate()
+
+// Countdown to Ahsoka Aug 23 2023 - day countdown
 
 class StarWarsCharacter {
   constructor(
@@ -27,10 +38,22 @@ class StarWarsCharacter {
     this.vehicles = vehicles
   }
 }
+
+// Player 1 Generation
 const player1GenBtn = document.querySelector('.player-1-gen-btn')
-const player2GenBtn = document.querySelector('.player-2-gen-btn')
+const char1Name = document.querySelector('#char1-name')
+const char1BirthYear = document.querySelector('#char1-birth-year')
+const char1EyeColor = document.querySelector('#char1-eye-color')
+const char1Gender = document.querySelector('#char1-gender')
+const char1HairColor = document.querySelector('#char1-hair-color')
+const char1Height = document.querySelector('#char1-height')
+const char1Mass = document.querySelector('#char1-mass')
+const char1Homeworld = document.querySelector('#char1-homeworld')
+const char1Starships = document.querySelector('#char1-starships')
+const char1Vehicles = document.querySelector('#char1-vehicles')
+
+// Get Player 1 main data
 player1GenBtn.addEventListener('click', () => {
-  // console.log('clicked')
   const getStarWarsCharData = async () => {
     const response = await fetch(
       `https://swapi.dev/api/people/${Math.floor(
@@ -47,7 +70,7 @@ player1GenBtn.addEventListener('click', () => {
 
     return data
   }
-  // ************* GET additional data  (homeworld, starships, vehicles)
+  // GET additional data  (homeworld, starships, vehicles)
   const getMoreCharData = async (url) => {
     const response = await fetch(`${url}`)
     const data = await response.json()
@@ -77,31 +100,18 @@ player1GenBtn.addEventListener('click', () => {
         data.vehicles
       )
       // manipulate DOM
-      // console.log(character.homeworld)
-      // console.log(character.starships)
-      const charName = document.querySelector('.char-name')
-      const charBirthYear = document.querySelector('.char-birth-year')
-      const charEyeColor = document.querySelector('.char-eye-color')
-      const charGender = document.querySelector('.char-gender')
-      const charHairColor = document.querySelector('.char-hair-color')
-      const charHeight = document.querySelector('.char-height')
-      const charMass = document.querySelector('.char-mass')
-      const charHomeworld = document.querySelector('.char-homeworld')
-
-      const charStarships = document.querySelector('.char-starships')
-      const charVehicles = document.querySelector('.char-vehicles')
-      charName.textContent = `${character.charName}`
-      charBirthYear.textContent = `Year of Birth: ${character.DOB}`
-      charEyeColor.textContent = `Eye Color: ${character.eyeColor}`
-      charGender.textContent = `Gender: ${character.gender}`
-      charHairColor.textContent = `Hair Color: ${character.hairColor}`
-      charHeight.textContent = `Height: ${character.height}`
-      charMass.textContent = `Mass: ${character.mass}`
+      char1Name.textContent = `${character.charName}`
+      char1BirthYear.textContent = `Year of Birth: ${character.DOB}`
+      char1EyeColor.textContent = `Eye Color: ${character.eyeColor}`
+      char1Gender.textContent = `Gender: ${character.gender}`
+      char1HairColor.textContent = `Hair Color: ${character.hairColor}`
+      char1Height.textContent = `Height: ${character.height}`
+      char1Mass.textContent = `Mass: ${character.mass}`
 
       // Homeworld
       const planet = getMoreCharData(character.homeworld)
         .then((data) => {
-          charHomeworld.textContent = `Homeworld: ${data.name}`
+          char1Homeworld.textContent = `Homeworld: ${data.name}`
         })
         .catch((err) => {
           console.log(`unresolved: ${err.message}`)
@@ -111,7 +121,7 @@ player1GenBtn.addEventListener('click', () => {
       if (character.starships.length === 1) {
         const starships = getMoreCharData(character.starships)
           .then((data) => {
-            charStarships.textContent = `Starships: ${data.name}`
+            char1Starships.textContent = `Starships: ${data.name}`
           })
           .catch((err) => {
             console.log(`unresolved: ${err.message}`)
@@ -126,7 +136,7 @@ player1GenBtn.addEventListener('click', () => {
               console.log(data.name)
               // const starshipsDisplayArray = []
               starshipsDisplayArray.push(data.name)
-              charStarships.textContent = `Starships: ${starshipsDisplayArray.join(
+              char1Starships.textContent = `Starships: ${starshipsDisplayArray.join(
                 ', '
               )}`
             })
@@ -135,14 +145,14 @@ player1GenBtn.addEventListener('click', () => {
             })
         }
       } else {
-        charStarships.textContent = `Starships: None or Unknown`
+        char1Starships.textContent = `Starships: None or Unknown`
       }
 
       // Vehicles
       if (character.vehicles.length === 1) {
         const vehicles = getMoreCharData(character.vehicles)
           .then((data) => {
-            charVehicles.textContent = `Vehicles: ${data.name}`
+            char1Vehicles.textContent = `Vehicles: ${data.name}`
           })
           .catch((err) => {
             console.log(`unresolved: ${err.message}`)
@@ -155,9 +165,8 @@ player1GenBtn.addEventListener('click', () => {
             .then((data) => {
               // console.log(data)
               console.log(data.name)
-              // const starshipsDisplayArray = []
               vehiclesDisplayArray.push(data.name)
-              charVehicles.textContent = `Vehicles: ${vehiclesDisplayArray.join(
+              char1Vehicles.textContent = `Vehicles: ${vehiclesDisplayArray.join(
                 ', '
               )}`
             })
@@ -166,15 +175,26 @@ player1GenBtn.addEventListener('click', () => {
             })
         }
       } else {
-        charVehicles.textContent = `Vehicles: None or Unknown`
+        char1Vehicles.textContent = `Vehicles: None or Unknown`
       }
     })
     .catch((err) => console.log(`unresolved: ${err.message}`))
 })
 
 // Player 2 Generation
+const player2GenBtn = document.querySelector('.player-2-gen-btn')
+const char2Name = document.querySelector('#char2-name')
+const char2BirthYear = document.querySelector('#char2-birth-year')
+const char2EyeColor = document.querySelector('#char2-eye-color')
+const char2Gender = document.querySelector('#char2-gender')
+const char2HairColor = document.querySelector('#char2-hair-color')
+const char2Height = document.querySelector('#char2-height')
+const char2Mass = document.querySelector('#char2-mass')
+const char2Homeworld = document.querySelector('#char2-homeworld')
+const char2Starships = document.querySelector('#char2-starships')
+const char2Vehicles = document.querySelector('#char2-vehicles')
+
 player2GenBtn.addEventListener('click', () => {
-  // console.log('clicked')
   const getStarWarsCharData = async () => {
     const response = await fetch(
       `https://swapi.dev/api/people/${Math.floor(
@@ -192,6 +212,7 @@ player2GenBtn.addEventListener('click', () => {
     return data
   }
   // ************* GET additional data  (homeworld, starships, vehicles)
+
   const getMoreCharData = async (url) => {
     const response = await fetch(`${url}`)
     const data = await response.json()
@@ -222,17 +243,6 @@ player2GenBtn.addEventListener('click', () => {
       // manipulate DOM
       // console.log(character.homeworld)
       // console.log(character.starships)
-      const char2Name = document.querySelector('#char2-name')
-      const char2BirthYear = document.querySelector('#char2-birth-year')
-      const char2EyeColor = document.querySelector('#char2-eye-color')
-      const char2Gender = document.querySelector('#char2-gender')
-      const char2HairColor = document.querySelector('#char2-hair-color')
-      const char2Height = document.querySelector('#char2-height')
-      const char2Mass = document.querySelector('#char2-mass')
-      const char2Homeworld = document.querySelector('#char2-homeworld')
-
-      const char2Starships = document.querySelector('#char2-starships')
-      const char2Vehicles = document.querySelector('#char2-vehicles')
       char2Name.textContent = `${character.charName}`
       char2BirthYear.textContent = `Year of Birth: ${character.DOB}`
       char2EyeColor.textContent = `Eye Color: ${character.eyeColor}`
@@ -316,10 +326,48 @@ player2GenBtn.addEventListener('click', () => {
 })
 
 // *********************************
-// *********************************
+// *********** Battle Event ********
 // *********************************
 const battleBtn = document.querySelector('.battle-btn')
+const battleResponseMessage = document.querySelector('.battle-response-message')
 battleBtn.addEventListener('click', () => {
-  console.log(`clicked`)
-  //HERE
+  const battleResponses = [
+    //1
+    `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1HairColor.textContent} and is from ${char1Homeworld.textContent}.`,
+    `${char1Name.textContent} wins because ${char2Name.textContent} has ${char2HairColor.textContent} and is from ${char2Homeworld.textContent}.`,
+    //2
+    `${char2Name.textContent} wins because ${char1Name.textContent} has ${char1EyeColor.textContent} and has ${char1BirthYear.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2EyeColor.textContent} and has ${char2BirthYear.textContent}.`,
+    //3
+    `${char1Name.textContent} wins because ${char1Name.textContent} is ${char1Height.textContent}, has ${char1Mass}, and has ridden ${char1Starships.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} is ${char2Height.textContent}, has ${char2Mass}, and has ridden ${char2Starships.textContent}.`,
+    //4
+    `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1Gender.textContent} and ${char1EyeColor.textContent}, and has ridden ${char1Vehicles.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2Gender.textContent} and ${char2EyeColor.textContent}, and has ridden ${char2Vehicles.textContent}.`,
+    //5
+    `${char1Name.textContent} wins because ${char1Name.textContent} is from ${char1Homeworld.textContent}, has ridden ${char1Starships.textContent}, and has ${char1HairColor.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} is from ${char2Homeworld.textContent}, has ridden ${char2Starships.textContent}, and has ${char2HairColor.textContent}.`,
+    //6
+    `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1BirthYear.textContent}, is ${char1Height.textContent}, and has ridden ${char1Vehicles.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2BirthYear.textContent}, is ${char2Height.textContent}, and has ridden ${char2Vehicles.textContent}.`,
+    //7
+    `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1HairColor.textContent}, ${char1EyeColor.textContent}, and is ${char1Gender.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2HairColor.textContent}, ${char2EyeColor.textContent}, and is ${char2Gender.textContent}.`,
+    //8
+    `${char1Name.textContent} wins because ${char1Name.textContent} is cooler.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} is cooler.`,
+    //9
+    `${char1Name.textContent} wins because ${char1Name.textContent} is more mysterious.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} is more mysterious.`,
+    //10
+    `${char1Name.textContent} wins because ${char1Name.textContent} has a better personality, allegedly.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} has a better personality, allegedly.`,
+  ]
+  const battlePrompt = 'Before a battle, you must select two players!'
+  if (char1Name.textContent && char2Name.textContent) {
+    battleResponseMessage.textContent =
+      battleResponses[Math.floor(Math.random() * (20 - 1) + 1)]
+  } else {
+    battleResponseMessage.textContent = battlePrompt
+  }
 })
