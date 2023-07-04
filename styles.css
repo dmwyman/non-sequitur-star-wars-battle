@@ -8,6 +8,33 @@
   left: 50%;
 }
 
-/* .char-starships {
-  color: red;
-} */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+html,
+body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+html,
+body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}

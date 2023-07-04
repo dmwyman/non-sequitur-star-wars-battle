@@ -6,13 +6,9 @@
 const currentDateMsg = document.querySelector('.current-date-msg')
 const displayDate = () => {
   const now = new Date()
-  // console.log(now.toLocaleString())
   currentDateMsg.textContent = now.toDateString()
 }
 displayDate()
-
-// Countdown to Ahsoka Aug 23 2023 - day countdown
-
 class StarWarsCharacter {
   constructor(
     charName,
