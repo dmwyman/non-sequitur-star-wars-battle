@@ -93,3 +93,70 @@ body {
 .fa-bars {
   color: #000;
 }
+
+/* ************************************************ */
+/* Landing Page - Main */
+/* ************************************************ */
+
+/* ************************************************ */
+/* Battle Page - Main */
+/* ************************************************ */
+.battle-main {
+  display: grid;
+  /* grid-template-rows: 20% 20% 20% 20% 20%; */
+}
+
+/* ************************************************ */
+/* About Page - Main */
+/* ************************************************ */
+
+/* ************************************************ */
+/* Footer */
+/* ************************************************ */
+
+.footer {
+  color: #000;
+  background-color: #ffe81f;
+  height: 2rem;
+  padding-top: 0.5rem;
+}
+
+/* ************************************************** */
+/* ************** Desktop media query *************** */
+/* ************************************************** */
+
+@media screen and (min-width: 769px) {
+  /* NAVIGATION */
+  /* .menu {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .logo {
+    order: 0;
+  }
+  .topnav-link {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  .topnav-link a:hover {
+    color: #009988;
+  }
+  .toggle {
+    display: none;
+  } */
+
+  /* Main */
+  /* .start-container a:hover {
+    background-color: #009988;
+    border-color: #332288;
+  }
+  .btns-container button {
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  .btns-container button:hover {
+    opacity: 1;
+  } */
+}
