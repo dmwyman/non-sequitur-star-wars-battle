@@ -330,13 +330,13 @@ battleBtn.addEventListener('click', () => {
   const battleResponses = [
     //1
     `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1HairColor.textContent} and is from ${char1Homeworld.textContent}.`,
-    `${char1Name.textContent} wins because ${char2Name.textContent} has ${char2HairColor.textContent} and is from ${char2Homeworld.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2HairColor.textContent} and is from ${char2Homeworld.textContent}.`,
     //2
-    `${char2Name.textContent} wins because ${char1Name.textContent} has ${char1EyeColor.textContent} and has ${char1BirthYear.textContent}.`,
+    `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1EyeColor.textContent} and has ${char1BirthYear.textContent}.`,
     `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2EyeColor.textContent} and has ${char2BirthYear.textContent}.`,
     //3
-    `${char1Name.textContent} wins because ${char1Name.textContent} is ${char1Height.textContent}, has ${char1Mass}, and has ridden ${char1Starships.textContent}.`,
-    `${char2Name.textContent} wins because ${char2Name.textContent} is ${char2Height.textContent}, has ${char2Mass}, and has ridden ${char2Starships.textContent}.`,
+    `${char1Name.textContent} wins because ${char1Name.textContent} is ${char1Height.textContent}, has ${char1Mass.textContent}, and has ridden ${char1Starships.textContent}.`,
+    `${char2Name.textContent} wins because ${char2Name.textContent} is ${char2Height.textContent}, has ${char2Mass.textContent}, and has ridden ${char2Starships.textContent}.`,
     //4
     `${char1Name.textContent} wins because ${char1Name.textContent} has ${char1Gender.textContent} and ${char1EyeColor.textContent}, and has ridden ${char1Vehicles.textContent}.`,
     `${char2Name.textContent} wins because ${char2Name.textContent} has ${char2Gender.textContent} and ${char2EyeColor.textContent}, and has ridden ${char2Vehicles.textContent}.`,

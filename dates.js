@@ -13,6 +13,6 @@ const countdown = () => {
 
   // calculate day gap
   const displayDay = Math.floor(gap / day)
-  countdownDays.textContent = displayDay
+  countdownDays.textContent = `${displayDay} days`
 }
 countdown()

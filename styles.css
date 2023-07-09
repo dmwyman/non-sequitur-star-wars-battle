@@ -95,8 +95,55 @@ body {
 }
 
 /* ************************************************ */
+/* All -  Main */
+/* ************************************************ */
+main {
+  background-color: #000;
+  /* color: white; */
+  color: #ffe81f;
+}
+.main-title {
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ************************************************ */
 /* Landing Page - Main */
 /* ************************************************ */
+/* Current Date Container */
+.current-date {
+  display: flex;
+  justify-content: left;
+}
+
+/* Countdown Container */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+}
+.countdown-show {
+  color: grey;
+}
+.countdown-days {
+  display: flex;
+  justify-content: center;
+  color: #ffe81f;
+}
+/* Start/Battle button */
+.start-container {
+  display: flex;
+  justify-content: center;
+}
+.start-link {
+  font-size: 2rem;
+  border-style: solid;
+  background-color: #ffe81f;
+  color: black;
+  border-radius: 2.5%;
+  text-decoration: none;
+  padding: 2.5%;
+}
 
 /* ************************************************ */
 /* Battle Page - Main */
@@ -106,9 +153,51 @@ body {
   /* grid-template-rows: 20% 20% 20% 20% 20%; */
 }
 
+.card-title,
+.char-name,
+.battle-response-message {
+  color: #ffe81f;
+}
+
+.char-attributes-list {
+  /* background-color: #ffe81f; */
+  /* background-color: black; */
+  /* color: black; */
+  color: white;
+  border: 1px solid #ffe81f;
+  /* border: 1px solid black; */
+}
+
+.left-card-container {
+  margin-bottom: 1rem;
+}
+
+.right-card-container {
+  margin-top: 1rem;
+}
+
+.gen-btn {
+  font-size: 1.25rem;
+}
+
+.battle-btn-section {
+  display: flex;
+  justify-content: center;
+}
+.battle-btn {
+  /* display: flex;
+  justify-content: center; */
+  font-size: 2rem;
+  background-color: #ffe81f;
+  color: black;
+}
+
 /* ************************************************ */
 /* About Page - Main */
 /* ************************************************ */
+.desc-span {
+  color: #ffe81f;
+}
 
 /* ************************************************ */
 /* Footer */

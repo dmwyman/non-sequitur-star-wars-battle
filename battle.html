@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
     />
-    <title>Non Sequitur Star Wars Battle Game</title>
+    <title>Star Wars Battle Game</title>
   </head>
   <body class="body-container">
     <header></header>
@@ -18,7 +18,7 @@
     <!-- mobile navigation bar -->
     <nav class="topnav">
       <ul class="menu">
-        <li class="logo">Non Sequitur Star Wars Battle</li>
+        <li class="logo">Star Wars Battle</li>
         <li class="topnav-link"><a href="./index.html">Home</li>
         <li class="topnav-link">About</li>
         <li class="topnav-link"><a href="./battle.html">Battle</li>
@@ -28,19 +28,20 @@
       </ul>
     </nav>
     <main class="battle-main">
-      <h1 class="home-main-title">Non Sequitur Star Wars Battle</h1>
-      <!-- current date -->
+            <!-- current date -->
       <div class="current-date">
         <p class="current-date-msg"></p>
       </div>
+      <h1 class="main-title">Star Wars Battle</h1>
+
       <!-- cards container -->
       <div class="cards-container">
         <!-- left card container -->
-        <section class="left-card-container">
-          <h2 class="left-card-title">Player 1</h2>
-          <button class="player-1-gen-btn">Generate!</button>
+        <section class="card-container left-card-container">
+          <h2 class="card-title left-card-title">Player 1</h2>
+          <button class="gen-btn player-1-gen-btn">Generate!</button>
           <h3 class="char-name" id="char1-name"></h3>
-          <ul class="char-attributes-list">
+          <ul class="char-attributes-list" id="char1-attributes-list">
             <li class="char-birth-year" id="char1-birth-year"></li>
             <li class="char-eye-color" id="char1-eye-color"></li>
             <li class="char-gender" id="char1-gender"></li>
@@ -51,16 +52,15 @@
             <li class="char-starships" id="char1-starships"></li>
             <li class="char-vehicles" id="char1-vehicles"></li>
           </ul>
-
-          <!-- Battle Btn  -->
+        </section>
+                  <!-- Battle Btn  -->
           <section class="battle-btn-section">
             <button class="battle-btn">Battle!</button>
           </section>
-        </section>
         <!-- right card container -->
-        <section class="right-card-container">
-          <h2 class="right-card-title">Player 2</h2>
-          <button class="player-2-gen-btn">Generate!</button>
+        <section class="card-container right-card-container">
+          <h2 class="card-title right-card-title">Player 2</h2>
+          <button class="gen-btn player-2-gen-btn">Generate!</button>
           <h3 class="char-name" id="char2-name"></h3>
           <ul class="char-attributes-list" id="char2-attributes-list">
             <li class="char-birth-year" id="char2-birth-year"></li>
@@ -84,6 +84,7 @@
     <footer class="home-footer footer">
       <p class="copyright-footer">© David Wyman | 2023</p>
     </footer>
+    <script src="./home.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>
