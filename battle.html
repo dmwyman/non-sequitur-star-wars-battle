@@ -12,22 +12,23 @@
     <title>Star Wars Battle Game</title>
   </head>
   <body class="body-container">
-    <header></header>
+    <header class="header battle-header">
     <!-- skip link -->
     <a class="skip-link" href="#main">Skip to main</a>
     <!-- mobile navigation bar -->
     <nav class="topnav">
       <ul class="menu">
         <li class="logo">Star Wars Battle</li>
-        <li class="topnav-link"><a href="./index.html">Home</li>
-        <li class="topnav-link">About</li>
+        <li class="topnav-link" class="home-topnav-link"><a href="./index.html">Home</li>
+        <li class="topnav-link"><a href=about.html>About</li>
         <li class="topnav-link"><a href="./battle.html">Battle</li>
         <li class="toggle">
           <a href="#"><i class="fa-solid fa-bars"></i></a>
         </li>
       </ul>
     </nav>
-    <main class="battle-main">
+    </header>
+    <main class="main battle-main">
             <!-- current date -->
       <div class="current-date">
         <p class="current-date-msg"></p>
@@ -81,7 +82,7 @@
       </section>
     </main>
     <!-- Footer -->
-    <footer class="home-footer footer">
+    <footer class="battle-footer footer">
       <p class="copyright-footer">© David Wyman | 2023</p>
     </footer>
     <script src="./home.js"></script>

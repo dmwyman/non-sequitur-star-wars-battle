@@ -22,21 +22,13 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  background-color: #000;
 }
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-html,
-body {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  box-sizing: border-box;
-  margin: 0;
-  width: 100%;
-  height: 100%;
 }
 
 /* ************************************************ */
@@ -95,6 +87,37 @@ body {
 }
 
 /* ************************************************ */
+/* Grid */
+/* ************************************************ */
+
+/* .body-container {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+} */
+
+/* Grid - Battle Page */
+body {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.footer {
+  grid-area: footer;
+}
+
+/* ************************************************ */
 /* All -  Main */
 /* ************************************************ */
 main {
@@ -109,7 +132,7 @@ main {
 }
 
 /* ************************************************ */
-/* Landing Page - Main */
+/* Home Page - Main */
 /* ************************************************ */
 /* Current Date Container */
 .current-date {
@@ -160,12 +183,8 @@ main {
 }
 
 .char-attributes-list {
-  /* background-color: #ffe81f; */
-  /* background-color: black; */
-  /* color: black; */
   color: white;
   border: 1px solid #ffe81f;
-  /* border: 1px solid black; */
 }
 
 .left-card-container {
@@ -195,6 +214,9 @@ main {
 /* ************************************************ */
 /* About Page - Main */
 /* ************************************************ */
+.about-main-desc {
+  color: lightgrey;
+}
 .desc-span {
   color: #ffe81f;
 }
@@ -206,8 +228,8 @@ main {
 .footer {
   color: #000;
   background-color: #ffe81f;
-  height: 2rem;
-  padding-top: 0.5rem;
+  /* height: 2rem;
+  padding-top: 0.5rem; */
 }
 
 /* ************************************************** */
@@ -216,13 +238,15 @@ main {
 
 @media screen and (min-width: 769px) {
   /* NAVIGATION */
-  /* .menu {
+  .menu {
     align-items: flex-start;
     flex-wrap: nowrap;
   }
   .logo {
     order: 0;
+    align-self: flex-start;
   }
+
   .topnav-link {
     order: 1;
     position: relative;
@@ -230,16 +254,18 @@ main {
     width: auto;
   }
   .topnav-link a:hover {
-    color: #009988;
+    color: grey;
   }
+
   .toggle {
     display: none;
-  } */
+  }
 
   /* Main */
-  /* .start-container a:hover {
-    background-color: #009988;
-    border-color: #332288;
+  .start-container a:hover {
+    background-color: black;
+    border-color: #ffe81f;
+    color: white;
   }
   .btns-container button {
     opacity: 0.6;
@@ -247,5 +273,24 @@ main {
   }
   .btns-container button:hover {
     opacity: 1;
+  }
+
+  /* Grid Layout - Battle */
+  /* .cards-container {
+    display: grid;
+    grid-template-columns: 5fr 0.5fr 5fr;
+    grid-template-rows: 1;
+    grid-template-areas: 'left btn right';
+  }
+  .left-card-container {
+    grid-area: left;
+  }
+  .battle-btn-section {
+    grid-area: btn;
+  }
+  .right-card-container {
+    grid-area: right;
   } */
+
+  /* Flexbox Layout - Battle */
 }
