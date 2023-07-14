@@ -97,7 +97,7 @@ body {
   grid-template-columns: 100%;
 } */
 
-/* Grid - Battle Page */
+/* Grid - All pages */
 body {
   display: grid;
   grid-template-rows: 1fr 8fr 1fr;
@@ -173,7 +173,7 @@ main {
 /* ************************************************ */
 .battle-main {
   display: grid;
-  /* grid-template-rows: 20% 20% 20% 20% 20%; */
+  grid-template-rows: 0fr 1fr 1fr 0fr;
 }
 
 .card-title,
@@ -204,8 +204,6 @@ main {
   justify-content: center;
 }
 .battle-btn {
-  /* display: flex;
-  justify-content: center; */
   font-size: 2rem;
   background-color: #ffe81f;
   color: black;
@@ -228,8 +226,6 @@ main {
 .footer {
   color: #000;
   background-color: #ffe81f;
-  /* height: 2rem;
-  padding-top: 0.5rem; */
 }
 
 /* ************************************************** */
@@ -237,7 +233,7 @@ main {
 /* ************************************************** */
 
 @media screen and (min-width: 769px) {
-  /* NAVIGATION */
+  /* Navigation */
   .menu {
     align-items: flex-start;
     flex-wrap: nowrap;
@@ -261,7 +257,7 @@ main {
     display: none;
   }
 
-  /* Main */
+  /* Home - Main */
   .start-container a:hover {
     background-color: black;
     border-color: #ffe81f;
@@ -276,21 +272,55 @@ main {
   }
 
   /* Grid Layout - Battle */
-  /* .cards-container {
+  .cards-container {
     display: grid;
-    grid-template-columns: 5fr 0.5fr 5fr;
-    grid-template-rows: 1;
+    grid-template-columns: 1fr 0.5fr 1fr;
     grid-template-areas: 'left btn right';
   }
   .left-card-container {
     grid-area: left;
+    background-color: red;
+    margin: 0;
+    /* background-color: #dd4e1e; */
+    background-color: #2e67f8;
+  }
+  .left-card-container li {
+    color: #f0ece1;
   }
   .battle-btn-section {
     grid-area: btn;
+    /* background-color: green; */
   }
+  .battle-btn {
+    max-height: 80px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
   .right-card-container {
     grid-area: right;
-  } */
+    background-color: #bc1e22;
+    margin: 0;
+    /* margin: violet solid 5px; */
+  }
+  .right-card-container li {
+    color: #ffffff;
+  }
 
   /* Flexbox Layout - Battle */
+
+  /* Battle - Btns */
+  /* .battle-btn-section {
+    background-color: black;
+  }
+  .battle-btn {
+    background-color: black;
+    color: #ffe81f;
+    display: inline-block;
+  } */
+
+  /* Battle - Attributes List */
+  li {
+    list-style-type: none;
+  }
 }
