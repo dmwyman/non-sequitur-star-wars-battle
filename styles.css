@@ -126,7 +126,7 @@ main {
   color: #ffe81f;
 }
 .main-title {
-  padding: 10%;
+  /* padding: 10%; */
   display: flex;
   justify-content: center;
 }
@@ -173,7 +173,7 @@ main {
 /* ************************************************ */
 .battle-main {
   display: grid;
-  grid-template-rows: 0fr 1fr 1fr 0fr;
+  grid-template-rows: 0fr 0.5fr 2fr 0fr;
 }
 
 .card-title,
@@ -276,6 +276,9 @@ main {
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
     grid-template-areas: 'left btn right';
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 10%;
   }
   .left-card-container {
     grid-area: left;
@@ -295,6 +298,8 @@ main {
     max-height: 80px;
     margin-top: auto;
     margin-bottom: auto;
+    background-color: #556567;
+    color: #ffffff;
   }
 
   .right-card-container {
@@ -307,20 +312,30 @@ main {
     color: #ffffff;
   }
 
-  /* Flexbox Layout - Battle */
+  .card-title {
+    font-size: 2rem;
+    padding: 0.25rem;
+  }
 
   /* Battle - Btns */
-  /* .battle-btn-section {
-    background-color: black;
+  .gen-btn {
+    font-size: 1.75rem;
   }
   .battle-btn {
     background-color: black;
     color: #ffe81f;
     display: inline-block;
-  } */
+  }
 
   /* Battle - Attributes List */
   li {
     list-style-type: none;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .char-name {
+    font-size: 2rem;
+    padding: 2.5%;
   }
 }
