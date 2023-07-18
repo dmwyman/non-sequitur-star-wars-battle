@@ -89,14 +89,6 @@ body {
 /* ************************************************ */
 /* Grid */
 /* ************************************************ */
-
-/* .body-container {
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-} */
-
 /* Grid - All pages */
 body {
   display: grid;
@@ -122,11 +114,9 @@ body {
 /* ************************************************ */
 main {
   background-color: #000;
-  /* color: white; */
   color: #ffe81f;
 }
 .main-title {
-  /* padding: 10%; */
   display: flex;
   justify-content: center;
 }
@@ -180,6 +170,9 @@ main {
 .char-name,
 .battle-response-message {
   color: #ffe81f;
+}
+.battle-response-message {
+  font-size: 1.5rem;
 }
 
 .char-attributes-list {
@@ -284,7 +277,6 @@ main {
     grid-area: left;
     background-color: red;
     margin: 0;
-    /* background-color: #dd4e1e; */
     background-color: #2e67f8;
   }
   .left-card-container li {
@@ -292,7 +284,6 @@ main {
   }
   .battle-btn-section {
     grid-area: btn;
-    /* background-color: green; */
   }
   .battle-btn {
     max-height: 80px;
@@ -306,7 +297,6 @@ main {
     grid-area: right;
     background-color: #bc1e22;
     margin: 0;
-    /* margin: violet solid 5px; */
   }
   .right-card-container li {
     color: #ffffff;
@@ -337,5 +327,11 @@ main {
   .char-name {
     font-size: 2rem;
     padding: 2.5%;
+  }
+
+  /* Battle message */
+  .battle-response-message {
+    font-size: 1.75rem;
+    padding-bottom: 2.5%;
   }
 }

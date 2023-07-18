@@ -237,8 +237,6 @@ player2GenBtn.addEventListener('click', () => {
         data.vehicles
       )
       // manipulate DOM
-      // console.log(character.homeworld)
-      // console.log(character.starships)
       char2Name.textContent = `${character.charName}`
       char2BirthYear.textContent = `Year of Birth: ${character.DOB}`
       char2EyeColor.textContent = `Eye Color: ${character.eyeColor}`
@@ -273,7 +271,6 @@ player2GenBtn.addEventListener('click', () => {
             .then((data) => {
               // console.log(data)
               console.log(data.name)
-              // const starshipsDisplayArray = []
               starshipsDisplayArray.push(data.name)
               char2Starships.textContent = `Starships: ${starshipsDisplayArray.join(
                 ', '
@@ -304,7 +301,6 @@ player2GenBtn.addEventListener('click', () => {
             .then((data) => {
               // console.log(data)
               console.log(data.name)
-              // const starshipsDisplayArray = []
               vehiclesDisplayArray.push(data.name)
               char2Vehicles.textContent = `Vehicles: ${vehiclesDisplayArray.join(
                 ', '
