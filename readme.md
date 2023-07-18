@@ -34,7 +34,7 @@ Feature 2 (list 1): Analyze data that is stored in arrays, objects, sets or maps
 -The battle responses array is analyzed (randomly) and displayed on the DOM, triggered by a click event.
 
 Feature 3 (list 1): Calculate and display data based on an external factor (ex: get the current date, and display how many days remaining until some event).
--Landing page (index.html) has a countdown to the release of the upcoming show, Ahsoka.
+-Landing page (index.html) has a countdown to the release of the upcoming show, Ahsoka. Current data is displayed on each page.
 
 Feature 4 (list 2): Retrieve data from a third-party API and use it to display something within your app.
 -Data from the Star Wars API (swapi) is retrieved with an async/await function and displayed on the battle.html page.
